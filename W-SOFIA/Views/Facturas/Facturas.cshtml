@@ -1,0 +1,195 @@
+﻿<div class="col-lg-12 col-md-12">
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h2>@ViewData["Title"]</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="#">Dashboard</a></li>
+                        <li class="active"><a href="#">Facturas</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+        <div class="card small">
+            <div class="card-header">
+                <strong class="card-title">Datos Factura</strong>
+            </div>
+            <div class="card-body">
+                <div class="row form-group">
+                    <div class="col col-md-4"><label class=" form-control-label">Documento:</label></div>
+                    <div class="col-12 col-md-8">
+                        <select name="selectSm" id="SelectLm" class="form-control-sm form-control">
+                            <option value="0">Please select</option>
+                            <option value="1">Factura</option>
+                            <option value="2">Pedido</option>
+                            <option value="3">Cotizacion</option>
+                        </select>
+                    </div>
+                    <div class="col col-md-4" style="margin:0.5em 0"><label class=" form-control-label">Tipo:</label></div>
+                    <div class="col-12 col-md-8" style="margin:0.5em 0">
+                            <div class="form-check-inline form-check">
+                                <label for="inline-radio1" class="form-check-label">
+                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input">Contado
+                                </label>
+                                <label for="inline-radio2" class="form-check-label" style="margin-left:1em">
+                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input">Credito
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-md-4"><label class=" form-control-label">Observaciones:</label></div>
+                        <div class="col-12 col-md-8">
+                            <textarea type="text" rows="3" id="text-input" name="text-input" placeholder="Text" class="input-sm form-control-sm form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+        <div class="card small">
+            <div class="card-header">
+                <strong class="card-title">Datos Cliente</strong>
+            </div>
+            <div class="card-body">
+                <div class="row form-group">
+                    <div class="col col-md-3"><label class=" form-control-label">Codigo:</label></div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" id="text-input" name="text-input" placeholder="Text" class="input-sm form-control-sm form-control">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label class=" form-control-label">Nombre:</label></div>
+                    <div class="col-12 col-md-9">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                            </div>
+                            <input type="text" id="input1-group2" name="input1-group2" placeholder="Nombre" class="input-sm form-control-sm form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label class=" form-control-label">Direccion:</label></div>
+                    <div class="col-12 col-md-9">
+                        <textarea type="text" rows="1" id="text-input" name="text-input" placeholder="Text" class="input-sm form-control-sm form-control"></textarea>
+                        <small class="form-text text-muted">This is a help text</small>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+<div class="col-md-12 col-lg-12" style="margin:-1em auto">
+    <div class="card small">
+        <div class="card-header">
+            <div class="col-12">
+                <strong class="card-title">Productos a Facturar</strong>
+            </div>
+
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 fact-productos">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button class="btn btn-sm btn-secondary"><i class="fa fa-shopping-cart"></i></button>
+                    </div>
+                    <input type="text" id="input1-group2" name="input1-group2" placeholder="Nombre" class="input-sm form-control-sm form-control">
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2  col-sm-2 col-xs-2 fact-productos">
+                <input type="number" placeholder="Disponible" class="input-sm form-control-sm form-control">
+            </div>
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2  fact-productos">
+                <input  type="number" placeholder="Cantidad" class="input-sm form-control-sm form-control">
+            </div>
+            <div class="col-md-2 col-lg-2 fact-productos">
+                <button type="button" class="btn btn-sm btn-success col-12">
+                    <i class="fa fa-plus"></i> Agregar
+                </button>
+            </div>
+        </div>
+            <div class="card-body">
+                <table class="table table-bordered table-sm table-responsive-lg table-responsive-sm table-responsive-xl" >
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Subtotal</th>
+                            <th scope="col">Iva</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-right">
+                            <th scope="row">1</th>
+                            <td>122145</td>
+                            <td class="text-left">Telefono Huawaie l2300</td>
+                            <td>20</td>
+                            <td>260</td>
+                            <td>260</td>
+                            <td>2.60</td>
+                            <td>262.60</td>
+                            <td>
+                                <button class="btn btn-sm"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="text-right">
+                            <th scope="row">2</th>
+                            <td>122145</td>
+                            <td class="text-left">Telefono Samsumg l2300</td>
+                            <td>20</td>
+                            <td>260</td>
+                            <td>260</td>
+                            <td>2.60</td>
+                            <td>262.60</td>
+                            <td>
+                                <button class="btn btn-sm"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="text-right">
+                            <th scope="row">3</th>
+                            <td>122145</td>
+                            <td class="text-left" >Telefono Sony l2300</td>
+                            <td>20</td>
+                            <td>260</td>
+                            <td>260</td>
+                            <td>2.60</td>
+                            <td>262.60</td>
+                            <td>
+                                <button class="btn btn-sm"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="table-active text-right" style="font-weight:bold">
+                            <th scope="row"></th>
+                            <td></td>
+                            <td class="text-right">Total:</td>
+                            <td>20</td>
+                            <td>260</td>
+                            <td>260</td>
+                            <td>2.60</td>
+                            <td>262.60</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="col-md-6 col-lg-6 offset-md-3 offset-lg-3">
+                    <button class="btn btn-primary col-md-12"><i class="fa fa-save"></i> Guardar</button>
+                </div>
+            </div>
+        </div>
+</div>
