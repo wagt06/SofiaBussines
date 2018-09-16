@@ -1,0 +1,245 @@
+﻿@model W_SOFIA.Models.Clientes;
+@{
+
+    List<W_SOFIA.Models.TerminosPagos> Terminos = (List<W_SOFIA.Models.TerminosPagos>)ViewData["Terminos"];
+    List<W_SOFIA.Models.Departamentos> Departamentos = (List<W_SOFIA.Models.Departamentos>)ViewData["Departamentos"];
+    List<W_SOFIA.Models.Municipios> Municipios = (List<W_SOFIA.Models.Municipios>)ViewData["Municipios"];
+    List<W_SOFIA.Models.Pais> Pais = (List<W_SOFIA.Models.Pais>)ViewData["Pais"];
+}
+<div class="col-md-12  animated" style="display:none">
+    <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
+        <span class="badge badge-pill badge-primary">Info</span>
+        El registro se guardo Correctamente.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+</div>
+<div class="col-lg-12  animated fadeInDown">
+    <div class="card small">
+        <div class="card-header">
+            <h4>Datos Cliente</h4>
+        </div>
+        <div class="card-body">
+            <div class="default-tab">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Informacion general</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Organizacion</a>
+                    </div>
+                </nav>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                            <div class="col-md-6">
+                                <div class="form-group-sm hidden">
+                                    <label asp-for="CodigoCliente" class="control-label"></label>
+                                    <input asp-for="CodigoCliente" class="form-control-sm form-control" />
+                                    <span asp-validation-for="CodigoCliente" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group-sm">
+                                    <label asp-for="NombreCliente" class="control-label"></label>
+                                    <input asp-for="NombreCliente" class="form-control-sm form-control" />
+                                    <span asp-validation-for="NombreCliente" class="text-danger"></span>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label asp-for="NoIdentificacion" class="control-label"></label>
+                                    <input asp-for="NoIdentificacion" class="form-control-sm form-control" />
+                                    <span asp-validation-for="NoIdentificacion" class="text-danger"></span>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label asp-for="Telefono" class="control-label"></label>
+                                    <input asp-for="Telefono" class="form-control-sm form-control" />
+                                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label asp-for="Celular" class="control-label"></label>
+                                    <input asp-for="Celular" class="form-control-sm form-control" />
+                                    <span asp-validation-for="Celular" class="text-danger"></span>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control-sm form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+
+
+                                <div class="form-group-sm">
+                                    <label asp-for="Direccion" class="control-label"></label>
+                                    <input asp-for="Direccion" class="form-control-sm form-control" />
+                                    <span asp-validation-for="Direccion" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group-sm">
+                                    <label asp-for="DireccionEnvio" class="control-label"></label>
+                                    <input asp-for="DireccionEnvio" class="form-control-sm form-control" />
+                                    <span asp-validation-for="DireccionEnvio" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group-sm" style="margin:1em 0">
+
+                                    <label asp-for="CodPais" class="control-label">Departamento</label>
+
+                                    <select asp-for="CodPais" data-placeholder="Seleccione un Pais" class="standardSelect" tabindex="-1" style="display: none;">
+                                        <option value=""></option>
+                                        @foreach (var items in Pais)
+                                        {
+                                            <option value=@items.CodPais> @items.Nombre</option>
+                                        }
+                                    </select>
+
+                                    <div class="chosen-drop">
+                                        <div class="chosen-search">
+                                        </div>
+                                    </div>
+
+                                    <span asp-validation-for="CodPais" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group-sm" style="margin:1em 0">
+
+                                    <label asp-for="CodDepartamento" class="control-label">Departamento</label>
+
+                                    <select asp-for="CodDepartamento" data-placeholder="Seleccione un Departamento" class="standardSelect" tabindex="-1" style="display: none;">
+                                        <option value=""></option>
+                                        @foreach (var items in Departamentos)
+                                        {
+                                            <option value=@items.CodDepartamento> @items.Descripcion</option>
+
+                                        }
+                                    </select>
+
+                                    <div class="chosen-drop">
+                                        <div class="chosen-search">
+                                        </div>
+                                    </div>
+
+                                    <span asp-validation-for="CodDepartamento" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group-sm" style="margin:1em 0">
+
+                                    <label asp-for="CodMunicipio" class="control-label">Municipio</label>
+
+                                    <select asp-for="CodMunicipio" data-placeholder="Seleccione un Municipio" class="standardSelect" tabindex="-1" style="display: none;">
+                                        <option value=""></option>
+                                        @foreach (var items in Municipios)
+                                        {
+                                            <option value=@items.CodDepartamento> @items.Nombre</option>
+                                        }
+                                    </select>
+
+                                    <div class="chosen-drop">
+                                        <div class="chosen-search">
+                                        </div>
+                                    </div>
+                                    <span asp-validation-for="CodMunicipio" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                            <div class="col-md-6">
+
+                                <div class="form-group-sm">
+                                    <label asp-for="CedularRuc" class="control-label"></label>
+                                    <input asp-for="CedularRuc" class="form-control-sm form-control" />
+                                    <span asp-validation-for="CedularRuc" class="text-danger"></span>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label asp-for="NombreEmpresa" class="control-label"></label>
+                                    <input asp-for="NombreEmpresa" class="form-control-sm form-control" />
+                                    <span asp-validation-for="NombreEmpresa" class="text-danger"></span>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label asp-for="NumeroCuenta" class="control-label"></label>
+                                    <input asp-for="NumeroCuenta" class="form-control-sm form-control" />
+                                    <span asp-validation-for="NumeroCuenta" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group-sm">
+                                    <label asp-for="FechaAlta" class="control-label"></label>
+                                    <input asp-for="FechaAlta" class="form-control-sm form-control" />
+                                    <span asp-validation-for="FechaAlta" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group-sm" style="margin:0 0 1em 0">
+
+                                    <label asp-for="CodigoTerminosPago" class="control-label">Condiciones de Pago</label>
+
+                                    <select asp-for="CodigoTerminosPago" data-placeholder="Seleccione una condicion" class="standardSelect" tabindex="-1" style="display: none;">
+                                        <option value=""></option>
+                                        @foreach (var items in Terminos)
+                                        {
+                                            <option value=@items.CodTermino> @items.Descripcion</option>
+
+                                        }
+                                    </select>
+
+                                    <div class="chosen-drop">
+                                        <div class="chosen-search">
+                                        </div>
+                                    </div>
+
+                                    <span asp-validation-for="CodigoTerminosPago" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group-sm">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input asp-for="Credito" /> @Html.DisplayNameFor(model => model.Credito)
+                                            <span asp-validation-for="CodigoTerminosPago" class="text-danger"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-sm">
+                                    <label asp-for="LimiteCredito" class="control-label"></label>
+                                    <input asp-for="LimiteCredito" class="form-control-sm form-control" />
+                                    <span asp-validation-for="LimiteCredito" class="text-danger"></span>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label asp-for="IdPrecio" class="control-label"></label>
+                                    <input asp-for="IdPrecio" class="form-control-sm form-control" />
+                                    <span asp-validation-for="IdPrecio" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group-sm" style="margin:1em 0">
+                                    <div class="checkbox">
+                                        <label>
+
+                                            <input asp-for="Activo" /> @Html.DisplayNameFor(model => model.Activo)
+                                            <span asp-validation-for="Activo" class="text-danger"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-12" style="margin-top:1em">
+                            <div class="form-group">
+                                <input type="submit" value="Guardar" class="btn btn-secondary btn-sm" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

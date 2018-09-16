@@ -1,0 +1,248 @@
+﻿@model W_SOFIA.Models.Inventario
+
+@*<h2>@ViewData["Title"]</h2>
+<hr />*@
+
+<div class="col-lg-12 animated fadeInDown" >
+    <div class="card small">
+        <div class="card-header">
+            <h4>Informacion general del Producto</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="View">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="col-md-12 alert alert-warning" role="alert">
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input asp-for="EsServicio" /> @Html.DisplayNameFor(model => model.EsServicio)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-10">
+                                    <p style="margin:0">Seleccionar si este registro es de tipo servicio, ejemplo consultorias, servicios profesionales o trabajos especializados</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="UPC" class="control-label"></label>
+                                    <input asp-for="UPC" class="form-control form-control-sm" />
+                                    <span asp-validation-for="UPC" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="SKU" class="control-label"></label>
+                                    <input asp-for="SKU" class="form-control form-control-sm" />
+                                    <span asp-validation-for="SKU" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="Descripcion" class="control-label"></label>
+                                    <input asp-for="Descripcion" class="form-control form-control-sm" />
+                                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group-sm" style="margin: 0">
+                                    <label class="control-label" for="CodProveedor">Proveedor</label>
+                                    <select data-placeholder="Seleccione un Proveedor" class="standardSelect" tabindex="-1" style="display: none;">
+                                        <option value=""></option>
+                                        <option value="United States">United States</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="Afghanistan">Afghanistan</option>
+                                        <option value="Aland Islands">Aland Islands</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="American Samoa">American Samoa</option>
+                                        <option value="Andorra">Andorra</option>
+                                        <option value="Angola">Angola</option>
+                                        <option value="Anguilla">Anguilla</option>
+                                        <option value="Antarctica">Antarctica</option>
+                                    </select><div class="chosen-container chosen-container-single" title="" style="width: 100%;">
+                                        <div class="chosen-drop">
+                                            <div class="chosen-search">
+                                                <input class="chosen-search-input" type="text" autocomplete="off" tabindex="-1">
+                                            </div>
+                                            <ul class="chosen-results"></ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="chosen-drop">
+                                        <div class="chosen-search">
+                                        </div>
+                                    </div>
+
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="CodProveedor" data-valmsg-replace="true"></span>
+                                </div>
+
+                                <div class="form-group-sm" style="margin:0 0 0 0">
+                                    <label class="control-label" for="CodCategoria">Categoria</label>
+                                    <select data-placeholder="Seleccione una Categoria" class="standardSelect" tabindex="-1" style="display: none;">
+                                        <option value=""></option>
+                                        <option value="United States">United States</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="Afghanistan">Afghanistan</option>
+                                        <option value="Aland Islands">Aland Islands</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="American Samoa">American Samoa</option>
+                                        <option value="Andorra">Andorra</option>
+                                        <option value="Angola">Angola</option>
+                                        <option value="Anguilla">Anguilla</option>
+                                        <option value="Antarctica">Antarctica</option>
+                                    </select><div class="chosen-container chosen-container-single" title="" style="width: 100%;">
+                                        <div class="chosen-drop">
+                                            <div class="chosen-search">
+                                                <input class="chosen-search-input" type="text" autocomplete="off" tabindex="-1">
+                                            </div>
+                                            <ul class="chosen-results"></ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="chosen-drop">
+                                        <div class="chosen-search">
+                                        </div>
+                                    </div>
+
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="CodProveedor" data-valmsg-replace="true"></span>
+                                </div>  @*Categoria*@
+
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input asp-for="Exento" /> @Html.DisplayNameFor(model => model.Exento)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+
+                                <div class="form-group-sm" style="margin:0em 0">
+                                    <label class="control-label" for="CodTipo">Tipo</label>
+                                    <select data-placeholder="Seleccione un Tipo" class="standardSelect" tabindex="-1" style="display: none;">
+                                        <option value=""></option>
+                                        <option value="United States">United States</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="Afghanistan">Afghanistan</option>
+                                        <option value="Aland Islands">Aland Islands</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="American Samoa">American Samoa</option>
+                                        <option value="Andorra">Andorra</option>
+                                        <option value="Angola">Angola</option>
+                                        <option value="Anguilla">Anguilla</option>
+                                        <option value="Antarctica">Antarctica</option>
+                                    </select><div class="chosen-container chosen-container-single" title="" style="width: 100%;">
+                                        <div class="chosen-drop">
+                                            <div class="chosen-search">
+                                                <input class="chosen-search-input" type="text" autocomplete="off" tabindex="-1">
+                                            </div>
+                                            <ul class="chosen-results"></ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="chosen-drop">
+                                        <div class="chosen-search">
+                                        </div>
+                                    </div>
+
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="CodTipo" data-valmsg-replace="true"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="CantMinima" class="control-label"></label>
+                                    <input asp-for="CantMinima" class="form-control form-control-sm" />
+                                    <span asp-validation-for="CantMinima" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="CantMaxima" class="control-label"></label>
+                                    <input asp-for="CantMaxima" class="form-control form-control-sm" />
+                                    <span asp-validation-for="CantMaxima" class="text-danger"></span>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label asp-for="Impuesto" class="control-label"></label>
+                                    <input asp-for="Impuesto" class="form-control form-control-sm" />
+                                    <span asp-validation-for="Impuesto" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="PrecioCompra" class="control-label"></label>
+                                    <input asp-for="PrecioCompra" class="form-control form-control-sm" />
+                                    <span asp-validation-for="PrecioCompra" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input asp-for="Descontinuado" /> @Html.DisplayNameFor(model => model.Descontinuado)
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="FechaAlta" class="control-label"></label>
+                                    <input asp-for="FechaAlta" class="form-control form-control-sm" />
+                                    <span asp-validation-for="FechaAlta" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="UltimaCompra" class="control-label"></label>
+                                    <input asp-for="UltimaCompra" class="form-control form-control-sm" />
+                                    <span asp-validation-for="UltimaCompra" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <strong class="card-title">Sucursales</strong>
+                                        </div>
+                                        <div class="card-body" style="padding:0.5em">
+
+                                            <select data-placeholder="Seleccion sucursales" multiple="" class="standardSelect" style="display: none;">
+                                                <option value=""></option>
+                                                <option value="001">Sucursal 1</option>
+                                                <option value="002">Sucursal 2</option>
+                                                <option value="003">Sucursal 3</option>
+                                                <option value="004">Sucursal 4</option>
+                                                <option value="005">Sucursal 5</option>
+                                                <option value="006">Sucursal 6</option>
+                                                <option value="007">Sucursal 7</option>
+                                            </select><div class="chosen-container chosen-container-multi" title="" style="width: 100%;">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                <div class="col-md-12">
+                    <div class="form-group btn-small">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

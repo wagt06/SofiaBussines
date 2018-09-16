@@ -1,0 +1,134 @@
+﻿@model W_SOFIA.Models.Clientes
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2>View</h2>
+
+<h4>Clientes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="View">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CodigoCliente" class="control-label"></label>
+                <input asp-for="CodigoCliente" class="form-control" />
+                <span asp-validation-for="CodigoCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodProveedor" class="control-label"></label>
+                <input asp-for="CodProveedor" class="form-control" />
+                <span asp-validation-for="CodProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreCliente" class="control-label"></label>
+                <input asp-for="NombreCliente" class="form-control" />
+                <span asp-validation-for="NombreCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NoIdentificacion" class="control-label"></label>
+                <input asp-for="NoIdentificacion" class="form-control" />
+                <span asp-validation-for="NoIdentificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Celular" class="control-label"></label>
+                <input asp-for="Celular" class="form-control" />
+                <span asp-validation-for="Celular" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Direccion" class="control-label"></label>
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodPais" class="control-label"></label>
+                <input asp-for="CodPais" class="form-control" />
+                <span asp-validation-for="CodPais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodMunicipio" class="control-label"></label>
+                <input asp-for="CodMunicipio" class="form-control" />
+                <span asp-validation-for="CodMunicipio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodDepartamento" class="control-label"></label>
+                <input asp-for="CodDepartamento" class="form-control" />
+                <span asp-validation-for="CodDepartamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DireccionEnvio" class="control-label"></label>
+                <input asp-for="DireccionEnvio" class="form-control" />
+                <span asp-validation-for="DireccionEnvio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaAlta" class="control-label"></label>
+                <input asp-for="FechaAlta" class="form-control" />
+                <span asp-validation-for="FechaAlta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroCuenta" class="control-label"></label>
+                <input asp-for="NumeroCuenta" class="form-control" />
+                <span asp-validation-for="NumeroCuenta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodigoTerminosPago" class="control-label"></label>
+                <input asp-for="CodigoTerminosPago" class="form-control" />
+                <span asp-validation-for="CodigoTerminosPago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Credito" /> @Html.DisplayNameFor(model => model.Credito)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LimiteCredito" class="control-label"></label>
+                <input asp-for="LimiteCredito" class="form-control" />
+                <span asp-validation-for="LimiteCredito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPrecio" class="control-label"></label>
+                <input asp-for="IdPrecio" class="form-control" />
+                <span asp-validation-for="IdPrecio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CedularRuc" class="control-label"></label>
+                <input asp-for="CedularRuc" class="form-control" />
+                <span asp-validation-for="CedularRuc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreEmpresa" class="control-label"></label>
+                <input asp-for="NombreEmpresa" class="form-control" />
+                <span asp-validation-for="NombreEmpresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Activo" /> @Html.DisplayNameFor(model => model.Activo)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
